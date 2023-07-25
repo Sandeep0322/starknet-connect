@@ -1,22 +1,19 @@
 import logo from './logo.svg';
+import { connect } from "get-starknet"
 import './App.css';
 
-function App() {
+async function App() {
+  const starknet = connect()
+  // await starknet.enable()
+
+// or try to connect to an approved wallet silently (on mount probably)
+// const starknet = connect()
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="starknet">
+      <header className="Dapp">
+        <button onclick={starknet}>starknet</button>
       </header>
     </div>
   );
